@@ -166,7 +166,7 @@ const Index = () => {
         <p className="text-xs text-[#333333] font-dm-mono">© 2026 Blink. Per-second laptop micro-insurance.</p>
         <div className="flex items-center gap-4">
           <button
-            onClick={() => navigate('/admin/gateway')}
+            onClick={() => navigate('/admin')}
             className="text-xs text-[#333333] hover:text-[#888888] font-dm-mono uppercase tracking-widest transition-colors"
           >
             Admin

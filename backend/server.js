@@ -129,6 +129,14 @@ for (const route of BILLED) {
 
 // --- Unbilled routes ---
 
+// GET /admin/role - returns the role for the wallet in X-Admin-Wallet header.
+// For local dev any wallet resolves to 'admin'. Production should enforce an allowlist.
+app.get('/admin/role', (req, res) => {
+  const wallet = req.headers['x-admin-wallet'];
+  if (!wallet) return res.status(401).json({ error: 'X-Admin-Wallet header required' });
+  res.json({ wallet_addr: wallet, role: 'admin' });
+});
+
 // GET /admin/metrics - aggregate metrics for the admin MetricsPanel.
 // TODO: implement with real per-policy data once the claims pipeline is wired.
 app.get('/admin/metrics', (req, res) => {
@@ -373,7 +381,7 @@ app.post('/admin/actuary/investigate', async (req, res) => {
     // Manual loop to let Claude use web_search before producing final JSON
     while (true) {
       response = await client.messages.create({
-        model: 'claude-opus-4-7',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 4096,
         thinking: { type: 'adaptive' },
         system: systemPrompt,

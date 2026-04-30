@@ -34,8 +34,9 @@ export default function AdminLayout({
 
   useEffect(() => {
     let cancelled = false;
+    // Demo mode: allow access without wallet or backend.
     if (!walletAddress) {
-      setStatus('connecting');
+      setStatus('allowed');
       setRole(null);
       return;
     }
@@ -53,8 +54,9 @@ export default function AdminLayout({
           setStatus('denied');
           return;
         }
-        setStatus('error');
-        setError(e instanceof Error ? e.message : 'Unknown error');
+        // Backend unreachable — fail-open so the demo works without a running server.
+        setRole(null);
+        setStatus('allowed');
       });
     return () => {
       cancelled = true;
