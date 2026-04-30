@@ -1,0 +1,22 @@
+{
+  "name": "blink-backend",
+  "version": "1.0.0",
+  "description": "Blink per-second insurance backend (x402 + Blink contract on Arc Testnet)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.91.1",
+    "@circle-fin/developer-controlled-wallets": "^9.2.0",
+    "@circlefin/x402-batching": "^1.0.5",
+    "@x402/core": "^2.5.0",
+    "@x402/evm": "^2.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0",
+    "express": "^4.18.2",
+    "viem": "^2.46.3"
+  }
+}

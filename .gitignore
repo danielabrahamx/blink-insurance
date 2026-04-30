@@ -1,0 +1,83 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+electron/node_modules/
+
+# Local install artefacts (see docs/DEVIATIONS.md section 4)
+electron/package-lock.json
+
+# v2 retired electron tree — source deleted from git on v2-browser-demo;
+# leftover dist-installer and caches stay on disk. Ignore entirely.
+electron/
+
+# Build outputs
+dist/
+build/
+artifacts/
+cache/
+coverage/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.bak
+*.env.bak
+backend/.env
+backend/.env.bak
+frontend/.env.bak
+
+# Local demo artefacts + binary data (never commit)
+backend/data/
+scripts/*.out
+scripts/demo-tx-log.json
+.claude/settings.local.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Hardhat
+coverage/
+coverage.json
+typechain/
+typechain-types/
+
+# Worktrees
+.worktrees/
+
+# Misc
+*.tgz
+*.tar.gz
+.cache/
+# Local Netlify folder
+.netlify
+.gstack/
+
+# Playwright test output
+tests/e2e/results/
+test-results/
+playwright-report/
+node_modules/
+dist/
+.env
+.env.local
+logs/
+*.log
+deployments/hardhat.json
