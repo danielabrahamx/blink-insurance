@@ -188,7 +188,7 @@ mocks and the simulation gateway).
 - `backend/blink-contract-abi.json` — compiled ABI for the Blink contract
 - `scripts/demo-real-txs.mjs` — round-robins the two priced endpoints
   for 60 real x402 testnet payments
-- `netlify.toml` — flips `VITE_DEMO_MODE=true` in production
+- `netlify.toml` — pins backend URL for all deploy contexts; simulation mode off by default (set `VITE_DEMO_MODE=true` in the Netlify UI per-branch to flip back to client-only fakes)
 
 ## Tokens & contracts (Arc Testnet)
 

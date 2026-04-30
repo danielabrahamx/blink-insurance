@@ -26,8 +26,8 @@ public deployment is real, not simulation.
 - **Two admin views exist**: `/admin/gateway` (legacy
   `InsuracleDashboardAdmin.tsx`) and `/admin` (new
   `admin/AdminLayout.tsx` with `MetricsPanel`, `PolicyInspector`,
-  `Replay`, `PolicyExport`). MetricsPanel calls `/admin/metrics`, which
-  is **not implemented in `server.js`** — adding it is open work.
+  `Replay`, `PolicyExport`). MetricsPanel calls `/admin/metrics`,
+  implemented at `server.js:142`.
 - **Policy analytics live in `frontend/src/lib/policyAnalyticsStore.ts`**
   (in-memory module store). Both LiveDemo and InsuracleDashboard push to
   it on policy completion; `InsuracleDashboardAdmin` reads from it.
